@@ -1,0 +1,19 @@
+lib : <unistd.h>
+
+l/ fork -->
+
+1 - child has is own process ID (different du pere) 
+    pid_t  getpgid(pid_t pid, pid_t pgid)
+    pid_t  getpgid(pid_t pid)
+
+2 - man execve(const char *filename, char *const argv[], char *const envop[])
+
+2/ - wait -->
+
+   il permet d'abord d'attendre l'execution du fils et de recupere le statut du fils, c-a-d comment il a quitte (propre ? SEGFAULT ? relance ?...) 
+
+
+3/ LES SIGNAUX
+
+un signal permet de renvoyer une information a un processus (ex string ou structure) on fait signe a un processus.
+

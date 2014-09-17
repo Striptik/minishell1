@@ -1,0 +1,49 @@
+/*
+** mysh.h for minishell header in /home/loisel_k/taff/C/Systeme-Unix/minishell1/include
+** 
+** Made by Kevin LOISELEUR
+** Login   <loisel_k@epitech.net>
+** 
+** Started on  Wed Dec 18 14:18:22 2013 Kevin LOISELEUR
+** Last update Wed Dec 18 19:08:27 2013 Kevin LOISELEUR
+*/
+
+#ifndef _MYSH_H_
+# define _MYSH_H_
+
+typedef struct		s_env
+{
+  char			**env;
+  char			*user;
+  char			*path;
+  char			*pwd;
+  char			*oldpwd;
+  char			*home;
+  char			*shell;
+}			t_env;
+
+/*
+** prompt du shell
+*/
+
+# define PS1		"KooKie'z shell>>"
+
+/*
+** Message d'erreur
+*/
+
+# define ERROR_ENV_NULL	" : command not find (Null environnement)\n"
+
+/*
+** Fonctions
+*/
+
+void			minishell(char **env);
+void			minishell_main(char **env);
+
+void			minishell_main_env_null(void);
+void			put_error_env_null(char *buf, char *error);
+void			aff_error(char *error);
+
+
+#endif /* _MYSH_H_  */
